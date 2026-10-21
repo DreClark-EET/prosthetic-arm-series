@@ -2,7 +2,7 @@
 
 An ongoing personal engineering research and development series focused on the design, 3D printing, and microcontroller programming of an electromechanical robotic hand. This project is structured as a 4-Stage R&D pipeline to transition a low-cost mechanical proof-of-concept into a fully functional, self-powered medical device prototype.
 
-## 🛠️ Project Tech Stack
+## Project Tech Stack
 * **Mechanical CAD:** Autodesk Inventor (Parametric Part Modeling & Assemblies)
 * **Embedded Software:** C++ (Arduino IDE)
 * **Electrical Control Components:** Microcontrollers (Arduino Uno), SG90 Micro-Servos, Pull-down Resistor Switching Networks, External 5V DC Power Distribution.
@@ -35,9 +35,10 @@ An ongoing personal engineering research and development series focused on the d
 During the initial hardware assembly, kinematic testing, and hardware-in-the-loop (HIL) verification phases, several complex electrical and mechanical hurdles were systematically resolved:
 
 ### 1. Eliminating Floating Pin State Errors (Electrical)
-* **The Problem:** The servos would occasionally trigger randomly without a button being actively pressed.
-* **The Root Cause:** The input pins on the microcontroller were left floating when the mechanical switches were open, absorbing stray electromagnetic ambient noise and shifting unpredictably between high and low logic states.
-* **The Fix:** Rewired the input matrix with solid external pull-down resistor configurations to force a deterministic ground state during standby.
+* **The Problem:** The servos would occasionally trigger and twitch randomly without a mechanical switch being actively pressed.
+* **The Root Cause:** The input pins on the microcontroller were originally left floating when the switches were open. Lacking a fixed voltage reference, the sensitive digital input gates acted like antennae—absorbing ambient electromagnetic noise and fluctuating unpredictably between high and low logic states.
+* **The Fix:** Optimized the system architecture by eliminating the need for external hardware resistors. Configured the embedded firmware to utilize the Arduino's internal `INPUT_PULLUP` resistor network within the software setup initialization and re-routed the physical button switches directly to Ground (GND). This guarantees a deterministic, solid 5V (HIGH) reference potential during standby, dropping to a clean 0V (LOW) trigger only upon switch compression, entirely resolving the input noise.
+
 
 ### 2. Overcoming Kinematic Joint Jams & Friction Lock (Mechanical)
 * **The Problem:** When starting from a completely flat, straight-finger position, the servo motors stalled or struggled to actuate the tendon strings, causing the finger linkages to bind and jam into themselves.
@@ -52,13 +53,14 @@ During the initial hardware assembly, kinematic testing, and hardware-in-the-loo
 ---
 ---
 
-## Stage 2: Heavy-Duty Industrial Material Upgrades (ACTIVE DEVELOPMENT)
-**Objective:** Replace budget components with ruggedized, high-torque industrial hardware to validate weight-bearing grip strength and mechanical reliability.
+## Stage 2: Heavy-Duty Material Upgrades (ACTIVE DEVELOPMENT)
+**Objective:** Replace budget components with ruggedized, high-torque hardware to validate weight-bearing grip strength and mechanical reliability. While also continuing to optimize overall design.
 
 ### Upgraded Specifications:
 * **High-Torque Actuators:** Transitioning from plastic SG90s to high-torque, metal-geared **TowerPro MG996R** servo motors to scale structural grip forces.
 * **Tendon Tensile Strength:** Replacing monofilament fishing line with high-tensile **braided line** to completely eliminate mechanical stretching under load.
-* **Dynamic Tension Springs:** Integrating mechanical tension return springs into the knuckle assemblies to ensure automated joint extension and variable-surface gripping compliance.
+* **Dynamic Tension Springs:** Integrating mechanical tension return springs into the tendon line system to ensure automated joint extension and gripping while letting servos reach their designated angle.
+* **Optimize Overall Design:** Modify servo mounts to be able to fit the **TowerPro MG996R** motors, modify tendon through holes to fit the larger diameter braided line, and optimize overall design.
 
 ---
 
