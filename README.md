@@ -60,11 +60,11 @@ During the initial hardware assembly, kinematic testing, and hardware-in-the-loo
 * **High-Torque Actuators:** Transitioning from plastic SG90s to high-torque, metal-geared **TowerPro MG996R** servo motors to scale structural grip forces.
 * **Tendon Tensile Strength:** Replacing monofilament fishing line with high-tensile **braided line** to completely eliminate mechanical stretching under load.
 * **Dynamic Tension Springs:** Integrating mechanical tension return springs into the tendon line system to ensure automated joint extension and gripping while letting servos reach their designated angle.
-* **Optimize Overall Design:** Modify servo mounts to be able to fit the **TowerPro MG996R** motors, modify tendon through holes to fit the larger diameter braided line, and optimize overall design.
+* **Optimize Overall Design:** Modify servo mounts to be able to fit the **TowerPro MG996R** motors, modify tendon through holes to fit the larger diameter braided line, and improve overall design.
 
 ---
 
-## 🩺 Stage 3: Analog EMG Signal Control Integration (FUTURE DEVELOPMENT)
+## Stage 3: Analog EMG Signal Control Integration (FUTURE DEVELOPMENT)
 **Objective:** Transition the prototype control mechanism away from discrete manual button triggers to autonomous, biological analog signal inputs.
 
 ### Technical Milestones:
@@ -74,10 +74,21 @@ During the initial hardware assembly, kinematic testing, and hardware-in-the-loo
 
 ---
 
-## 🏁 Stage 4: Comprehensive Medical Socket & Internal Power (FINAL MILESTONE)
+## Stage 4: Internal Power Architecture (FUTURE DEVELOPMENT)
+**Objective:** Eliminate external power tethers by designing an independent, safely regulated on-board power delivery network.
+
+### Technical Milestones:
+* **Lithium-Ion Integration:** Incorporate a high-capacity, multi-cell Lithium-Ion battery bank directly into the forearm structural envelope.
+* **Smart Rechargeable System Infrastructure:** Integrate a dedicated USB-C charging interface managed by a lithium charging IC (such as a TP4056 or similar), enabling safe recharging capabilities without removing the battery bank from the housing shell.
+* **Battery Management System (BMS):** Integrate a dedicated circuit module to handle cell-balancing, over-voltage/under-voltage protection, and thermal runaway prevention.
+* **Voltage Regulation Loops:** Implement high-efficiency buck-boost DC-DC voltage regulators to supply steady 5V/6V lines to the heavy-duty MG996R servos while cleanly isolating power ripples
+
+---
+
+## Stage 5: Comprehensive Medical Socket Integration (FINAL MILESTONE)
 **Objective:** Finalize the assembly into a wearable, fully integrated, finished medical device package optimized for an end-user amputee.
 
 ### Design Targets:
-* **Anatomical Socket Design:** Modeled and contoured a custom forearm socket shell featuring integrated internal cavities specifically engineered to seat skin-contact surface EMG sensors comfortably.
-* **Independent Internal Power:** Incorporate a high-capacity, rechargeable lithium-ion battery management system (BMS) with integrated safety circuit protections directly into the forearm structure to eliminate the need for external power tethers.
-* **Comprehensive Validation:** Execute continuous-cycle stress testing to document battery life profiles, thermal boundaries, and structural joint durability under long-term daily operating conditions.
+* **Anatomical Socket Design:** Model and 3D contour a custom, dual-walled forearm prosthetic socket shell engineered to cleanly house all internal actuators, the power bank, and the custom control PCB.
+* **Embedded Sensor Matrix:** Map out interior socket guide cavities to firmly seat skin-contact surface EMG sensors comfortably against the residual limb muscles without signal slippage.
+* **System-Level Validation Testing:** Execute continuous-cycle stress testing to document battery discharge curves, maximum load lift capacities, and joint durability under long-term daily operating conditions.
