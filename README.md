@@ -25,24 +25,29 @@ An ongoing personal engineering research and development series focused on the d
 ![Inventor CAD Model](https://github.com/user-attachments/assets/88e24cae-55be-4790-b2c8-86b36b7983c4)
 
 ### Breadboard Input Subsystem:
-![Circuit Prototyping](https://github.com/user-attachments/assets/824e803b-3c58-429d-baef-3fea7154b7a9)
+![Circuit Prototyping]()
 
 ### Assembled Physical Prototype (V1):
-[Insert Physical Build Image Here]
+![Physical Build]()
 
-## Stage 1 Engineering Troubleshooting & Debugging Log
+## Stage 1 Troubleshooting & Debugging Log
 
-During initial hardware assembly and hardware-in-the-loop (HIL) testing phases, several structural and electrical hurdles were systematically resolved:
+During the initial hardware assembly, kinematic testing, and hardware-in-the-loop (HIL) verification phases, several complex electrical and mechanical hurdles were systematically resolved:
 
-### 1. Motor Jitter & Voltage Sag Mitigation
-* **The Problem:** When multiple buttons were pressed simultaneously, the servos exhibited erratic jittering, and the microcontroller occasionally reset.
-* **The Root Cause:** The servos were pulling peak current directly from the microcontroller's onboard 5V regulator, exceeding its thermal and current thresholds and causing a voltage sag.
-* **The Fix:** Isolated the electronic logic power rail from the motor power rail. Integrated a dedicated external DC power supply to feed the servos directly and tied the grounds together to establish a shared reference potential.
-
-### 2. Eliminating Floating Pin State Errors
+### 1. Eliminating Floating Pin State Errors (Electrical)
 * **The Problem:** The servos would occasionally trigger randomly without a button being actively pressed.
-* **The Root Cause:** The input pins on the microcontroller were left floating when the mechanical switches were open, absorbing ambient static noise and shifting unpredictably between high and low logic states.
-* **The Fix:** Rewired the input matrix with solid pull-down resistor configurations, forcing a deterministic electrical state during standby.
+* **The Root Cause:** The input pins on the microcontroller were left floating when the mechanical switches were open, absorbing stray electromagnetic ambient noise and shifting unpredictably between high and low logic states.
+* **The Fix:** Rewired the input matrix with solid external pull-down resistor configurations to force a deterministic ground state during standby.
+
+### 2. Overcoming Kinematic Joint Jams & Friction Lock (Mechanical)
+* **The Problem:** When starting from a completely flat, straight-finger position, the servo motors stalled or struggled to actuate the tendon strings, causing the finger linkages to bind and jam into themselves.
+* **The Root Cause:** In a perfectly straight profile, the tendon tensile force vectors were aligned directly parallel to the hinge pin centerlines, resulting in zero initial torque leverage. Combined with high static friction across the 3D-printed joints, the mechanics hit a mathematical vector lock.
+* **The Fix:** Redesigned the parametric finger models in Autodesk Inventor to establish a slight, bio-mimetic baseline curvature at rest. This engineered pre-curve ensures an immediate, favorable moment arm for the tendon line to pull against, completely eliminating joint binding, drastically reducing motor strain, and optimizing natural cosmetic aesthetics.
+
+### 3. Decoupling Tendon Tension from Wrist Rotation (Mechanical)
+* **The Problem:** Rotating the wrist assembly caused the fingers to unexpectedly clench or hyper-extend, skewing the calibrated servo motor positions.
+* **The Root Cause:** The original design routed the tendon lines along the external surface of the forearm. As the wrist joint rotated, the paths of the lines twisted around the outer diameter, artificially tightening or slackening the fishing line and coupling the wrist and finger mechanics together.
+* **The Fix:** Engineered a centralized **through-hole routing manifold** positioned directly concentric with the wrist axis of rotation. Passing the tendon strings down through the geometric center of the wrist cylinder ensures that line pathways remain perfectly uniform in length regardless of the hand's rotational angle, completely decoupling the mechanical subsystems.
 
 ---
 ---
