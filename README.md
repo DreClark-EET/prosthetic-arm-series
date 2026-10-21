@@ -1,12 +1,12 @@
-# Bio-Mimetic Robotic Prosthetic Hand Series
+# Bio-Mimetic Prosthetic Hand Series
 
-An ongoing personal engineering research and development series focused on the design, 3D printing, and microcontroller programming of an electromechanical robotic hand. This project is structured as a 4-Stage R&D pipeline to systematically transition a low-cost mechanical proof-of-concept into a fully functional, self-powered medical device prototype.
+An ongoing personal engineering research and development series focused on the design, 3D printing, and microcontroller programming of an electromechanical robotic hand. This project is structured as a 4-Stage R&D pipeline to transition a low-cost mechanical proof-of-concept into a fully functional, self-powered medical device prototype.
 
 ## 🛠️ Project Tech Stack
 * **Mechanical CAD:** Autodesk Inventor (Parametric Part Modeling & Assemblies)
 * **Embedded Software:** C++ (Arduino IDE)
-* **Electrical Control Components:** Microcontrollers (Arduino Uno / ESP32), PWM Actuators, Pull-down Resistor Switching Networks, External DC Power Distribution.
-
+* **Electrical Control Components:** Microcontrollers (Arduino Uno), SG90 Micro-Servos, Pull-down Resistor Switching Networks, External 5V DC Power Distribution.
+---
 ---
 
 ## Stage 1: Kinematic Proof-of-Concept & Manual Control (COMPLETED)
@@ -15,7 +15,7 @@ An ongoing personal engineering research and development series focused on the d
 ### Engineering & Testing Milestones:
 * **Parametric Design:** Modeled fundamental human finger joint constraints in Autodesk Inventor to optimize range of motion and analyze assembly clearances.
 * **Low-Cost Actuation Testing:** Utilized lightweight SG90 micro-servo motors and clear monofilament fishing line to establish a baseline mechanical "pull" profile.
-* **Electrical Verification:** Built a breadboard routing network integrating discrete push-buttons with physical pull-down resistors to eliminate digital pin floating and ensure crisp input signal transitions.
+* **Electrical Verification:** Built a breadboard routing network integrating discrete push-buttons with internal pull-down resistors to eliminate digital pin floating and ensure great input signal transitions.
 
 ### Stage 1 Verification Results:
 * Fully assembled structural hand printed and cleared for basic mechanical articulation.
@@ -24,16 +24,11 @@ An ongoing personal engineering research and development series focused on the d
 ### CAD Model Design Architecture:
 ![Inventor CAD Model](https://github.com/user-attachments/assets/88e24cae-55be-4790-b2c8-86b36b7983c4)
 
-
-<!-- 📸 PHOTO HINT 2: DRAG AND DROP A PICTURE OF YOUR PHYSICAL BREADBOARDED CIRCUIT WIRE NEST HERE -->
 ### Breadboard Input Subsystem:
 ![Circuit Prototyping](https://github.com/user-attachments/assets/824e803b-3c58-429d-baef-3fea7154b7a9)
 
-<!-- 📸 PHOTO HINT 3: DRAG AND DROP A PICTURE OR SHORT GIF OF YOUR COMPLETED SG90 PHYSICAL PRINT MOVING HERE -->
 ### Assembled Physical Prototype (V1):
 [Insert Physical Build Image Here]
-
----
 
 ## Stage 1 Engineering Troubleshooting & Debugging Log
 
@@ -49,6 +44,7 @@ During initial hardware assembly and hardware-in-the-loop (HIL) testing phases, 
 * **The Root Cause:** The input pins on the microcontroller were left floating when the mechanical switches were open, absorbing ambient static noise and shifting unpredictably between high and low logic states.
 * **The Fix:** Rewired the input matrix with solid pull-down resistor configurations, forcing a deterministic electrical state during standby.
 
+---
 ---
 
 ## Stage 2: Heavy-Duty Industrial Material Upgrades (ACTIVE DEVELOPMENT)
