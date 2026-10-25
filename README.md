@@ -24,6 +24,12 @@ An ongoing personal engineering research and development series focused on the d
 ### CAD Model Design Architecture:
 ![Inventor CAD Model](https://github.com/user-attachments/assets/88e24cae-55be-4790-b2c8-86b36b7983c4)
 
+### Breadboard Input Subsystem:
+![Circuit Prototyping]()
+
+### Assembled Physical Prototype (V1):
+![Physical Build]()
+
 ## Stage 1 Troubleshooting & Debugging Log
 
 During the initial hardware assembly, kinematic testing, and hardware-in-the-loop (HIL) verification phases, several complex electrical and mechanical hurdles were systematically resolved:
@@ -43,13 +49,6 @@ During the initial hardware assembly, kinematic testing, and hardware-in-the-loo
 * **The Problem:** Rotating the wrist assembly caused the fingers to unexpectedly clench or hyper-extend, skewing the calibrated servo motor positions.
 * **The Root Cause:** The original design routed the tendon lines along the external surface of the forearm. As the wrist joint rotated, the paths of the lines twisted around the outer diameter, artificially tightening or slackening the fishing line and coupling the wrist and finger mechanics together.
 * **The Fix:** Engineered a centralized **through-hole routing manifold** positioned directly concentric with the wrist axis of rotation. Passing the tendon strings down through the geometric center of the wrist cylinder ensures that line pathways remain perfectly uniform in length regardless of the hand's rotational angle, completely decoupling the mechanical subsystems.
-
-
-### Breadboard Input Subsystem:
-![Circuit Prototyping]()
-
-### Assembled Physical Prototype (V1):
-![Physical Build]()
 
 ---
 ---
