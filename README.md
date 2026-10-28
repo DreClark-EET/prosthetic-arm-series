@@ -1,4 +1,4 @@
-# Bio-Mimetic Prosthetic Hand Series
+# Bio-Mimetic Prosthetic Arm Series
 
 An ongoing personal engineering research and development series focused on the design, 3D printing, and microcontroller programming of an electromechanical robotic hand. This project is structured as a 5-Stage R&D pipeline to transition a low-cost mechanical proof-of-concept into a fully functional, self-powered medical device prototype.
 
