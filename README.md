@@ -25,7 +25,7 @@ An ongoing personal engineering research and development series focused on the d
 ![Inventor CAD Model](https://github.com/user-attachments/assets/88e24cae-55be-4790-b2c8-86b36b7983c4)
 
 ### Breadboard Input Subsystem:
-![Circuit Prototyping]()
+![Circuit Prototyping](https://github.com/user-attachments/assets/aac9cd19-81c1-4be2-831a-4c36cac3abba)
 
 ### Assembled Physical Prototype (V1):
 ![Physical Build]()
