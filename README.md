@@ -28,7 +28,7 @@ An ongoing personal engineering research and development series focused on the d
 ![Circuit Prototyping](https://github.com/user-attachments/assets/aac9cd19-81c1-4be2-831a-4c36cac3abba)
 
 ### Assembled Physical Prototype (V1):
-![Physical Build]()
+![Physical Build](https://github.com/user-attachments/assets/84144265-fa64-4c54-9b8d-3457a49f2d98)
 
 ## Stage 1 Troubleshooting & Debugging Log
 
